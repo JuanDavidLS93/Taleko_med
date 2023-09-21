@@ -1,5 +1,6 @@
 package med.taleko.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.taleko.api.domain.direccion.DatosDireccion;
 import med.taleko.api.domain.medico.*;
@@ -16,6 +17,7 @@ import java.net.URI;
 
 @RestController /* ESTO LE DICE A SPING QUE ESTA CLASE ES UN CONTROLLER */
 @RequestMapping("/medicos")/* ESTO LE DICE A SPRING Q ESTE ES EL ENDPOINT O DESTINO DE ESTE CONTROLLER */
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     @Autowired
     private MedicoRepository medicoRepository;

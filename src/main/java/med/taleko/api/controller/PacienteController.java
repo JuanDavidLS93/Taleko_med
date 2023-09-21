@@ -1,5 +1,6 @@
 package med.taleko.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.taleko.api.domain.direccion.DatosDireccion;
 import med.taleko.api.domain.paciente.*;
@@ -16,6 +17,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
     @Autowired
     private PacienteRepository pacienteRepository;
